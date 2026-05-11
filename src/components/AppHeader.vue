@@ -29,21 +29,24 @@
             </a>
           </router-link>
           <div class="nav-dropdown">
-            <a href="#" class="nav-link">
-              SHOP
-              <span class="dropdown-arrow">▼</span>
-            </a>
+            <router-link to="/shop" class="nav-link" active-class="active" custom v-slot="{ isActive, navigate }">
+              <a @click="navigate" :class="['nav-link', { active: isActive }]">
+                <template v-if="isActive">[ SHOP ]</template>
+                <template v-else>SHOP</template>
+                <span class="dropdown-arrow">▼</span>
+              </a>
+            </router-link>
             <div class="dropdown-menu shop-dropdown">
               <div class="shop-menu-left">
                 <h3 class="shop-menu-title">SHOP</h3>
                 <nav class="shop-menu-links">
-                  <a href="#" class="shop-menu-link">Products Grid</a>
+                  <router-link to="/shop" class="shop-menu-link">Products Grid</router-link>
                   <a href="#" class="shop-menu-link">Single Product</a>
                   <a href="#" class="shop-menu-link">Cart</a>
                   <a href="#" class="shop-menu-link">Checkout</a>
                   <a href="#" class="shop-menu-link">Wishlist</a>
-                  <a href="#" class="shop-menu-link">Login - Register</a>
-                  <a href="#" class="shop-menu-link">Help Center</a>
+                  <router-link to="/contact" class="shop-menu-link">Login - Register</router-link>
+                  <router-link to="/contact" class="shop-menu-link">Help Center</router-link>
                 </nav>
               </div>
               <div class="shop-menu-right">
@@ -229,7 +232,12 @@
               <template v-else>LISTING</template>
             </a>
           </router-link>
-          <a href="#" class="mobile-nav-link">SHOP</a>
+          <router-link to="/shop" class="mobile-nav-link" active-class="active" custom v-slot="{ isActive, navigate }">
+            <a @click="navigate(); toggleMobileMenu()" :class="['mobile-nav-link', { active: isActive }]">
+              <template v-if="isActive">[ SHOP ]</template>
+              <template v-else>SHOP</template>
+            </a>
+          </router-link>
           <router-link to="/contact" class="mobile-nav-link" active-class="active" custom v-slot="{ isActive, navigate }">
             <a @click="navigate(); toggleMobileMenu()" :class="['mobile-nav-link', { active: isActive }]">
               <template v-if="isActive">[ CONTACTS ]</template>
