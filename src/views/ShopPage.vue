@@ -211,7 +211,7 @@ const bestSellers = ref([
 const products = ref([
   {
     name: 'PRESTIGE WHL 894 WHEELS 4X450',
-    image: 'https://wgl-dsites.net/genesisauto/wp-content/uploads/2024/05/prod_3-1-540x620.webp',
+    image: 'https://wgl-dsites.net/genesisauto/wp-content/uploads/2024/05/prod_8-1-540x620.webp',
     rating: 4,
     price: '1,900.00',
     badge: null,
@@ -219,7 +219,7 @@ const products = ref([
   },
   {
     name: 'GOODYEAR ULTRA GRIP PERFORMANCE',
-    image: 'https://wgl-dsites.net/genesisauto/wp-content/uploads/2024/05/shop-2-400x400.webp',
+    image: 'https://wgl-dsites.net/genesisauto/wp-content/uploads/2024/05/prod_8-1-540x620.webp',
     rating: 4,
     oldPrice: '480.00',
     price: '410.00',
@@ -228,7 +228,7 @@ const products = ref([
   },
   {
     name: 'CANDY RED FUEL 1245 HEATER FUEL',
-    image: 'https://wgl-dsites.net/genesisauto/wp-content/uploads/2024/05/prod_1-1-540x620.webp',
+    image: 'https://wgl-dsites.net/genesisauto/wp-content/uploads/2024/05/prod_9-1-540x620.webp',
     rating: 4,
     price: '2,830.00',
     badge: null,
@@ -236,7 +236,7 @@ const products = ref([
   },
   {
     name: 'YOKOHAMA SPORT V105 - 245/40',
-    image: 'https://wgl-dsites.net/genesisauto/wp-content/uploads/2024/05/shop-1-400x400.webp',
+    image: 'https://wgl-dsites.net/genesisauto/wp-content/uploads/2024/05/prod_12-1-540x620.webp',
     rating: 4,
     price: '450.00',
     badge: null,
@@ -244,7 +244,7 @@ const products = ref([
   },
   {
     name: 'HALO HEADLIGHTS SPYDER PRO SERIES',
-    image: 'https://wgl-dsites.net/genesisauto/wp-content/uploads/2024/05/prod_2-1-540x620.webp',
+    image: 'https://wgl-dsites.net/genesisauto/wp-content/uploads/2024/05/prod_10-2-540x620.webp',
     rating: 4,
     price: '224.00',
     badge: null,
@@ -252,7 +252,7 @@ const products = ref([
   },
   {
     name: 'HALO HEADLIGHTS PRO SERIES',
-    image: 'https://wgl-dsites.net/genesisauto/wp-content/uploads/2024/05/shop-3-400x400.webp',
+    image: 'https://wgl-dsites.net/genesisauto/wp-content/uploads/2024/05/prod_4-2-540x620.webp',
     rating: 4,
     price: '235.00',
     badge: null,
@@ -260,7 +260,7 @@ const products = ref([
   },
   {
     name: 'PROJECTOR HEADLIGHTS RECON',
-    image: 'https://wgl-dsites.net/genesisauto/wp-content/uploads/2024/05/prod_2-1-540x620.webp',
+    image: 'https://wgl-dsites.net/genesisauto/wp-content/uploads/2024/05/prod_5-1-540x620.webp',
     rating: 4,
     oldPrice: '250.00',
     price: '169.00',
@@ -269,7 +269,7 @@ const products = ref([
   },
   {
     name: 'PROJECTOR HEADLIGHTS RECON CJ',
-    image: 'https://wgl-dsites.net/genesisauto/wp-content/uploads/2024/05/shop-1-400x400.webp',
+    image: 'https://wgl-dsites.net/genesisauto/wp-content/uploads/2024/05/prod_6-2-540x620.webp',
     rating: 4,
     price: '240.00',
     badge: 'SALE',
