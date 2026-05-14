@@ -63,15 +63,15 @@
           <!-- Shopping Cart -->
           <div class="sidebar-widget">
             <h3 class="widget-title">[ Shopping Cart ]</h3>
-            <div v-if="cart.length === 0" class="empty-cart">
+            <div v-if="cartItems.length === 0" class="empty-cart">
               <p>No products in the cart.</p>
             </div>
             <div v-else class="cart-items">
-              <div v-for="(item, index) in cart" :key="index" class="cart-item">
+              <div v-for="(item, index) in cartItems" :key="index" class="cart-item">
                 <img :src="item.image" :alt="item.name" class="cart-item-img" />
                 <div class="cart-item-info">
                   <p class="cart-item-name">{{ item.name }}</p>
-                  <p class="cart-item-price">${{ item.price }}</p>
+                  <p class="cart-item-price">{{ item.quantity }} × ${{ item.price }}</p>
                 </div>
                 <button class="remove-btn" @click="removeFromCart(index)">×</button>
               </div>
@@ -79,6 +79,7 @@
                 <span>Total:</span>
                 <span class="cart-total-price">${{ cartTotal }}</span>
               </div>
+              <router-link to="/cart" class="view-cart-btn">VIEW CART</router-link>
             </div>
           </div>
         </aside>
@@ -159,6 +160,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 import PageHero from '../components/PageHero.vue'
+import { useCart } from '../stores/cart.js'
 
 const heroBackground = ref('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1600&auto=format')
 const searchQuery = ref('')
@@ -167,16 +169,8 @@ const activeTag = ref('')
 const currentPage = ref(1)
 const itemsPerPage = 9
 
-const cart = ref([])
-const cartTotal = computed(() => cart.value.reduce((sum, item) => sum + parseFloat(item.price), 0).toFixed(2))
-
-const addToCart = (product) => {
-  cart.value.push({ ...product })
-}
-
-const removeFromCart = (index) => {
-  cart.value.splice(index, 1)
-}
+const { cartItems, addToCart, removeFromCart } = useCart()
+const cartTotal = computed(() => cartItems.value.reduce((sum, item) => sum + parseFloat(item.price.replace(',', '')) * item.quantity, 0).toFixed(2))
 
 const toggleWishlist = (product) => {
   product.wishlisted = !product.wishlisted
@@ -533,6 +527,25 @@ const totalPages = computed(() => Math.ceil(filteredProducts.value.length / item
 
 .cart-total-price {
   color: #e63946;
+}
+
+.view-cart-btn {
+  display: block;
+  text-align: center;
+  background: #e63946;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-family: Arial, sans-serif;
+  margin-top: 15px;
+  transition: background 0.3s ease;
+}
+
+.view-cart-btn:hover {
+  background: #d62839;
 }
 
 /* Main Content */

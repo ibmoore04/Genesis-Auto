@@ -160,13 +160,14 @@
               <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
             </svg>
           </button>
-          <button class="icon-btn" aria-label="Shopping Cart">
+          <router-link to="/cart" class="icon-btn cart-icon-btn" aria-label="Shopping Cart">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
               <line x1="3" y1="6" x2="21" y2="6"></line>
               <path d="M16 10a4 4 0 0 1-8 0"></path>
             </svg>
-          </button>
+            <span v-if="cartCount > 0" class="cart-badge">{{ cartCount }}</span>
+          </router-link>
           <button class="menu-btn" aria-label="Menu">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
               <circle cx="5" cy="5" r="2"></circle>
@@ -202,13 +203,14 @@
           <img src="/genesis-logo.png" alt="Genesis Auto" class="logo-img-mobile" />
         </div>
 
-        <button class="cart-btn-mobile" aria-label="Shopping Cart">
+        <router-link to="/cart" class="cart-btn-mobile" aria-label="Shopping Cart">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
             <line x1="3" y1="6" x2="21" y2="6"></line>
             <path d="M16 10a4 4 0 0 1-8 0"></path>
           </svg>
-        </button>
+          <span v-if="cartCount > 0" class="cart-badge">{{ cartCount }}</span>
+        </router-link>
       </div>
 
       <!-- Mobile Menu Dropdown -->
@@ -252,8 +254,10 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useCart } from '../stores/cart.js'
 
 const mobileMenuOpen = ref(false)
+const { cartCount } = useCart()
 
 const toggleMobileMenu = () => {
   mobileMenuOpen.value = !mobileMenuOpen.value
@@ -628,6 +632,29 @@ const toggleMobileMenu = () => {
   color: #e63946;
 }
 
+.cart-icon-btn {
+  position: relative;
+  text-decoration: none;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: #e63946;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  font-family: Arial, sans-serif;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+}
+
 .menu-btn {
   background: #e63946;
   border: none;
@@ -714,6 +741,8 @@ const toggleMobileMenu = () => {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  text-decoration: none;
 }
 
 /* Mobile Menu Dropdown */

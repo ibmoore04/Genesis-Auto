@@ -4,44 +4,23 @@ import AboutPage from '../views/AboutPage.vue'
 import ListingPage from '../views/ListingPage.vue'
 import ContactPage from '../views/ContactPage.vue'
 import ShopPage from '../views/ShopPage.vue'
+import CartPage from '../views/CartPage.vue'
 
 const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: HomePage
-  },
-  {
-    path: '/about',
-    name: 'About',
-    component: AboutPage
-  },
-  {
-    path: '/listing',
-    name: 'Listing',
-    component: ListingPage
-  },
-  {
-    path: '/contact',
-    name: 'Contact',
-    component: ContactPage
-  },
-  {
-    path: '/shop',
-    name: 'Shop',
-    component: ShopPage
-  }
+  { path: '/', name: 'Home', component: HomePage },
+  { path: '/about', name: 'About', component: AboutPage },
+  { path: '/listing', name: 'Listing', component: ListingPage },
+  { path: '/contact', name: 'Contact', component: ContactPage },
+  { path: '/shop', name: 'Shop', component: ShopPage },
+  { path: '/cart', name: 'Cart', component: CartPage }
 ]
 
 const router = createRouter({
   history: createWebHistory(),
   routes,
   scrollBehavior(to, from, savedPosition) {
-    if (savedPosition) {
-      return savedPosition
-    } else {
-      return { top: 0 }
-    }
+    if (savedPosition) return savedPosition
+    return { top: 0 }
   }
 })
 
