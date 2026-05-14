@@ -5,6 +5,7 @@ import ListingPage from '../views/ListingPage.vue'
 import ContactPage from '../views/ContactPage.vue'
 import ShopPage from '../views/ShopPage.vue'
 import CartPage from '../views/CartPage.vue'
+import CheckoutPage from '../views/CheckoutPage.vue'
 
 const routes = [
   { path: '/', name: 'Home', component: HomePage },
@@ -12,7 +13,8 @@ const routes = [
   { path: '/listing', name: 'Listing', component: ListingPage },
   { path: '/contact', name: 'Contact', component: ContactPage },
   { path: '/shop', name: 'Shop', component: ShopPage },
-  { path: '/cart', name: 'Cart', component: CartPage }
+  { path: '/cart', name: 'Cart', component: CartPage },
+  { path: '/checkout', name: 'Checkout', component: CheckoutPage }
 ]
 
 const router = createRouter({
